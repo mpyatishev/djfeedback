@@ -2,7 +2,7 @@
 
 from django import template
 
-from feedbacks.forms import FeedbackForm
+from ..forms import FeedbackForm
 
 register = template.Library()
 

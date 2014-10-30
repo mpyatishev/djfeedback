@@ -1,5 +1,6 @@
 <div class="feedback">
 	<form method="POST" action="{% url 'feedback-post' %}">
+		{% csrf_token %}
 		{{ feedback_form }}
 		<input type="submit">
 	</form>
