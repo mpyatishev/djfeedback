@@ -1,0 +1,4 @@
+djfeedback
+==========
+
+Django Feedback App
