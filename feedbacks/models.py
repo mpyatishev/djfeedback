@@ -8,11 +8,14 @@ class Feedback(models.Model):
     ftype = models.ForeignKey('FeedbackType')
     subj = models.CharField(max_length=254)
     text = models.TextField()
-    attachment = models.ForeignKey('Attachment')
+    attachment = models.ForeignKey('Attachment', blank=True, null=True)
 
 
 class FeedbackType(models.Model):
     name = models.CharField(max_length=80)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Attachment(models.Model):
