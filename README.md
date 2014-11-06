@@ -10,7 +10,7 @@ git clone git@github.com:mpyatishev/djfeedback.git
 cd djfeedback
 virtualenv --python=python2.7 ./env
 source ./env/bin/activate
-pip install django
+pip install -r requirements.txt
 python manage.py migrate
 npm install
 ```
