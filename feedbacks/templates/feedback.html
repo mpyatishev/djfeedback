@@ -1,47 +1,50 @@
 {% load staticfiles %}
+{% load compress %}
 {% block css %}
-    <link rel="stylesheet" href="{% static 'built/feedbacks.css' %}" />
+    {% compress css %}
+        <link href="{% static 'built/feedbacks.css' %}" rel="stylesheet" />
+    {% endcompress %}
 {% endblock %}
 
 <div class="feedback">
-	<form method="POST">
-		{% csrf_token %}
-		{{ feedback_form }}
-		<input type="submit">
-	</form>
+    <form method="POST">
+        {% csrf_token %}
+        {{ feedback_form }}
+        <input type="submit">
+    </form>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="/static/js/jquery.cookie.js"></script>
 <script>
 function csrfSafeMethod(method) {
-	// these HTTP methods do not require CSRF protection
-	return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+    // these HTTP methods do not require CSRF protection
+    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
 }
 
 $('document').ready(function() {
-	var form = $('form');
-	form.submit(function(event) {
-		event.preventDefault();
-		var data = new FormData(form[0]);
-		$.ajax({
-			url: "{% url 'feedback-post' %}",
-			type: 'POST',
-			data: data,
-			processData: false,
-			contentType: false,
-			beforeSend: function(xhr, settings) {
-				if (!csrfSafeMethod(settings.type)) {
-					xhr.setRequestHeader('X-CSRFToken', $.cookie('csrftoken'));
-				}
-			},
-			success: function(data, textStatus, jqXHR) {
-				console.log(data);
-			},
-			error: function(jqXHR, textStatus, error) {
-				console.log(error);
-			}
-		});
-	});
+    var form = $('form');
+    form.submit(function(event) {
+        event.preventDefault();
+        var data = new FormData(form[0]);
+        $.ajax({
+            url: "{% url 'feedback-post' %}",
+            type: 'POST',
+            data: data,
+            processData: false,
+            contentType: false,
+            beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type)) {
+                    xhr.setRequestHeader('X-CSRFToken', $.cookie('csrftoken'));
+                }
+            },
+            success: function(data, textStatus, jqXHR) {
+                console.log(data);
+            },
+            error: function(jqXHR, textStatus, error) {
+                console.log(error);
+            }
+        });
+    });
 });
 </script>
