@@ -55,6 +55,8 @@ target/
 
 # Front-End
 node_modules
+feedbacks/static/built
+feedbacks/static/vendor
 
 # DB
 db.sqlite3

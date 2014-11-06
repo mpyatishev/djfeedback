@@ -5,12 +5,19 @@
   "license": "MIT",
   "repository": "mpyatishev/djfeedback",
   "devDependencies": {
+    "autoprefixer-stylus": "",
+    "bower": "",
+    "csso-stylus": "",
     "gulp": "",
     "gulp-jscs": "",
     "gulp-jshint": "",
+    "gulp-stylus": "",
     "jscs": "",
     "jscs-jsdoc": "",
     "jshint-stylish": "",
     "yargs": ""
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower install; ./node_modules/.bin/gulp stylus"
   }
 }

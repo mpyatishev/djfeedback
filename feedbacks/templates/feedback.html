@@ -1,3 +1,8 @@
+{% load staticfiles %}
+{% block css %}
+    <link rel="stylesheet" href="{% static 'built/feedbacks.css' %}" />
+{% endblock %}
+
 <div class="feedback">
 	<form method="POST">
 		{% csrf_token %}
