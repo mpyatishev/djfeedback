@@ -30,7 +30,7 @@ gulp.task('lint', function () {
 
 gulp.task('stylus', function () {
     return gulp
-        .src('./feedbacks/static/styl/feedbacks.styl')
+        .src('./feedbacks/static/styl/dj-feedback.styl')
         .pipe(stylus({
             use: [
                 autoprefixer({

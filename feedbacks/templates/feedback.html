@@ -2,15 +2,19 @@
 {% load compress %}
 {% block css %}
     {% compress css %}
-        <link href="{% static 'built/feedbacks.css' %}" rel="stylesheet" />
+        <link href="{% static 'built/dj-feedback.css' %}" rel="stylesheet" />
     {% endcompress %}
 {% endblock %}
 
-<div class="feedback">
-    <form method="POST">
-        {% csrf_token %}
-        {{ feedback_form }}
-        <input type="submit">
+<div class="b-dj-feedback">
+    <span class="b-dj-feedback__toggler">Feedback</span>
+
+    <form class="b-dj-Feedback__form _state_hidden" action="" method="POST">
+        <fieldset>
+            {% csrf_token %}
+            {{ feedback_form }}
+            <button type="submit">Submit</button>
+        </fieldset>
     </form>
 </div>
 
