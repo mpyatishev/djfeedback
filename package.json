@@ -1,0 +1,16 @@
+{
+  "name": "djfeedback",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mpyatishev/djfeedback",
+  "license": "MIT",
+  "repository": "mpyatishev/djfeedback",
+  "devDependencies": {
+    "gulp": "",
+    "gulp-jscs": "",
+    "gulp-jshint": "",
+    "jscs": "",
+    "jscs-jsdoc": "",
+    "jshint-stylish": "",
+    "yargs": ""
+  }
+}

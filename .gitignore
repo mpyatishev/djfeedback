@@ -52,3 +52,9 @@ docs/_build/
 
 # PyBuilder
 target/
+
+# Front-End
+node_modules
+
+# DB
+db.sqlite3
