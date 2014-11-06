@@ -2,7 +2,9 @@
   "name": "djfeedback",
   "version": "0.0.0",
   "dependencies": {
-    "normalize-css": "~3.0.1"
+    "jquery": "~2.1.1",
+    "jquery.cookie": "~1.4.1",
+    "requirejs": "~2.1.14"
   },
   "private": true
 }
