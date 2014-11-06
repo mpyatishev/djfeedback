@@ -18,36 +18,45 @@
     </form>
 </div>
 
-<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<script src="/static/js/jquery.cookie.js"></script>
+<script src="{% static 'vendor/requirejs/require.js' %}"></script>
 <script>
-function csrfSafeMethod(method) {
-    // these HTTP methods do not require CSRF protection
-    return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-}
+require(['{% static 'js/common.js' %}'], function () {
+    require([
+        'jquery',
+        'jqueryCookie',
+    ], function (
+        $,
+        _jqueryCookie
+    ) {
+        function csrfSafeMethod(method) {
+            // these HTTP methods do not require CSRF protection
+            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+        }
 
-$('document').ready(function() {
-    var form = $('form');
-    form.submit(function(event) {
-        event.preventDefault();
-        var data = new FormData(form[0]);
-        $.ajax({
-            url: "{% url 'feedback-post' %}",
-            type: 'POST',
-            data: data,
-            processData: false,
-            contentType: false,
-            beforeSend: function(xhr, settings) {
-                if (!csrfSafeMethod(settings.type)) {
-                    xhr.setRequestHeader('X-CSRFToken', $.cookie('csrftoken'));
-                }
-            },
-            success: function(data, textStatus, jqXHR) {
-                console.log(data);
-            },
-            error: function(jqXHR, textStatus, error) {
-                console.log(error);
-            }
+        $('document').ready(function() {
+            var form = $('form');
+            form.submit(function(event) {
+                event.preventDefault();
+                var data = new FormData(form[0]);
+                $.ajax({
+                    url: "{% url 'feedback-post' %}",
+                    type: 'POST',
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    beforeSend: function(xhr, settings) {
+                        if (!csrfSafeMethod(settings.type)) {
+                            xhr.setRequestHeader('X-CSRFToken', $.cookie('csrftoken'));
+                        }
+                    },
+                    success: function(data, textStatus, jqXHR) {
+                        console.log(data);
+                    },
+                    error: function(jqXHR, textStatus, error) {
+                        console.log(error);
+                    }
+                });
+            });
         });
     });
 });
