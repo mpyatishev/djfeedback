@@ -12,7 +12,7 @@
     </span>
 
     <div class="b-toggler _name_dj-feedback b-toggler__panel">
-        <form class="b-dj-feedback__form" action="" method="POST">
+        <form class="b-dj-feedback__form" action="{% url 'feedback-post' %}" method="POST">
             <fieldset>
                 {% csrf_token %}
                 {{ feedback_form.as_p }}
@@ -24,8 +24,6 @@
 
 <script src="{% static 'vendor/requirejs/require.js' %}"></script>
 <script>
-var ajaxLinks = window.AjaxLinks = window.AjaxLinks || {};
-ajaxLinks.feedbackPost = "{% url 'feedback-post' %}";
 require(['{% static 'js/common.js' %}'], function () {
     require(['./js/dj-feedback']);
 });

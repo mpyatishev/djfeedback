@@ -36,7 +36,7 @@ define([
             submitHandler: function () {
                 var data = new FormData(form[0]);
                 $.ajax({
-                    url: window.AjaxLinks.feedbackPost,
+                    url: form[0].action,
                     type: 'POST',
                     data: data,
                     processData: false,
