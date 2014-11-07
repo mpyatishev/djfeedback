@@ -3,20 +3,24 @@
 {% block css %}
     {% compress css %}
         <link href="{% static 'built/dj-feedback.css' %}" rel="stylesheet" />
+        <link href="{% static 'vendor/bootstrap/dist/css/bootstrap.css' %}" rel="stylesheet" />
     {% endcompress %}
 {% endblock %}
 
-<div class="b-dj-feedback">
+<div class="b-dj-feedback _theme_tour">
     <span class="b-toggler _name_dj-feedback b-toggler__toggler">
         <span class="b-toggler__text">Feedback</span>
     </span>
 
     <div class="b-toggler _name_dj-feedback b-toggler__panel">
-        <form class="b-dj-feedback__form" action="{% url 'feedback-post' %}" method="POST">
+        <form class="b-dj-feedback__form" action="{% url 'feedback-post' %}" method="POST" role="form">
             <fieldset>
                 {% csrf_token %}
                 {{ feedback_form.as_p }}
-                <button type="submit">Submit</button>
+
+                <p class="form-group">
+                    <button class="btn btn-primary" type="submit">Submit</button>
+                </p>
             </fieldset>
         </form>
     </div>

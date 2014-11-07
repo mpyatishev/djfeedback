@@ -1,0 +1,67 @@
+borderColor = #000;
+
+.b-dj-feedback._theme_tour {
+    border: 1px solid borderColor;
+    background-color: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+
+    .b-dj-feedback__form {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 10px 20px;
+
+        fieldset {
+            margin: 0;
+            padding: 0;
+            border: none;
+        }
+
+        p {
+            margin: 0;
+
+            + p {
+                margin-top: 10px;
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        /*
+        * 1 - in pixels for height without scroll
+        * 2 - line-height * 6 rows + 6px
+        */
+
+        textarea {
+            box-sizing: border-box;
+            width: 100%;
+            height: 114px; /* 2 */
+            font-size: 16px;
+            line-height: 18px; /* 1 */
+            resize: vertical;
+            max-height: 18px * 12;
+        }
+
+        select {
+            margin-top: .275em;
+        }
+
+        &._state_ajax-waiting {
+        }
+    }
+
+
+    .b-toggler__toggler {
+        background-color: #fff;
+        box-shadow: 1px 0 0 0px borderColor,
+                    1px -1px 0 0px borderColor,
+                    1px 1px 0 0px borderColor;
+    }
+
+    .b-toggler__text {
+        display: block;
+        padding: 10px 20px;
+    }
+}
