@@ -25,11 +25,13 @@ define([
     };
 
     var blockForm = function (form) {
+        form = $(form);
         form.addClass('_state_ajax-waiting');
         form.find('[type=\'submit\']').attr('disabled', 'disabled');
     };
 
     var unblockForm = function (form) {
+        form = $(form);
         form.removeClass('_state_ajax-waiting');
         form.find('[type=\'submit\']').removeAttr('disabled');
     };
@@ -44,14 +46,10 @@ define([
         var form = $('.b-dj-feedback__form');
 
         form.validate({
-            submitHandler: function () {
-                var data = new FormData(form[0]);
+            submitHandler: function (form) {
                 $.ajax({
-                    url: form[0].action,
+                    url: form.action,
                     type: 'POST',
-                    data: data,
-                    processData: false,
-                    contentType: false,
                     /**
                      */
                     beforeSend: function (xhr, settings) {
@@ -71,7 +69,7 @@ define([
                     error: function (jqXHR, textStatus, error) {
                         console.log(error);
                         unblockForm(form);
-                    }
+                    },
                 });
             },
         });
