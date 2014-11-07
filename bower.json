@@ -4,7 +4,8 @@
   "dependencies": {
     "jquery": "~2.1.1",
     "jquery.cookie": "~1.4.1",
-    "requirejs": "~2.1.14"
+    "requirejs": "~2.1.14",
+    "jquery-validation": "~1.13.1"
   },
   "private": true,
   "devDependencies": {
