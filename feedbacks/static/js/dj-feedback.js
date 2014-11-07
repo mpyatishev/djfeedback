@@ -5,10 +5,12 @@
 define([
     'jquery',
     'jqueryCookie',
+    'jqueryValidate',
     'toggler',
 ], function (
     $,
     _jqueryCookie,
+    jqueryValidate,
     Toggler
 ) {
 
@@ -30,34 +32,34 @@ define([
         });
 
         var form = $('.b-dj-feedback__form');
-        form.on('submit', function (e) {
-            e.preventDefault();
-
-            var data = new FormData(form[0]);
-            $.ajax({
-                url: window.AjaxLinks.feedbackPost,
-                type: 'POST',
-                data: data,
-                processData: false,
-                contentType: false,
-                /**
-                 */
-                beforeSend: function (xhr, settings) {
-                    if (!csrfSafeMethod(settings.type)) {
-                        xhr.setRequestHeader('X-CSRFToken', $.cookie('csrftoken'));
+        form.validate({
+            submitHandler: function () {
+                var data = new FormData(form[0]);
+                $.ajax({
+                    url: window.AjaxLinks.feedbackPost,
+                    type: 'POST',
+                    data: data,
+                    processData: false,
+                    contentType: false,
+                    /**
+                     */
+                    beforeSend: function (xhr, settings) {
+                        if (!csrfSafeMethod(settings.type)) {
+                            xhr.setRequestHeader('X-CSRFToken', $.cookie('csrftoken'));
+                        }
+                    },
+                    /**
+                     */
+                    success: function (data, textStatus, jqXHR) {
+                        console.log(data);
+                    },
+                    /**
+                     */
+                    error: function (jqXHR, textStatus, error) {
+                        console.log(error);
                     }
-                },
-                /**
-                 */
-                success: function (data, textStatus, jqXHR) {
-                    console.log(data);
-                },
-                /**
-                 */
-                error: function (jqXHR, textStatus, error) {
-                    console.log(error);
-                }
-            });
+                });
+            },
         });
     };
 
