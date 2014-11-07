@@ -24,50 +24,9 @@
 
 <script src="{% static 'vendor/requirejs/require.js' %}"></script>
 <script>
+var ajaxLinks = window.AjaxLinks || {};
+ajaxLinks.feedbackPost = "{% url 'feedback-post' %}";
 require(['{% static 'js/common.js' %}'], function () {
-    require([
-        'jquery',
-        'jqueryCookie',
-        'toggler',
-    ], function (
-        $,
-        _jqueryCookie,
-        Toggler
-    ) {
-        var toggler = new Toggler({
-            name: 'dj-feedback',
-        });
-
-        function csrfSafeMethod(method) {
-            // these HTTP methods do not require CSRF protection
-            return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-        }
-
-        $('document').ready(function() {
-            var form = $('form');
-            form.submit(function(event) {
-                event.preventDefault();
-                var data = new FormData(form[0]);
-                $.ajax({
-                    url: "{% url 'feedback-post' %}",
-                    type: 'POST',
-                    data: data,
-                    processData: false,
-                    contentType: false,
-                    beforeSend: function(xhr, settings) {
-                        if (!csrfSafeMethod(settings.type)) {
-                            xhr.setRequestHeader('X-CSRFToken', $.cookie('csrftoken'));
-                        }
-                    },
-                    success: function(data, textStatus, jqXHR) {
-                        console.log(data);
-                    },
-                    error: function(jqXHR, textStatus, error) {
-                        console.log(error);
-                    }
-                });
-            });
-        });
-    });
+    require(['./js/dj-feedback']);
 });
 </script>
