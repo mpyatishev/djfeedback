@@ -20,8 +20,10 @@ define([
      */
     var csrfSafeMethod = function (method) {
         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
-    }
+    };
 
+    /**
+     */
     var DjFeedback = function () {
         var toggler = new Toggler({
             name: 'dj-feedback',
@@ -38,15 +40,21 @@ define([
                 data: data,
                 processData: false,
                 contentType: false,
-                beforeSend: function(xhr, settings) {
+                /**
+                 */
+                beforeSend: function (xhr, settings) {
                     if (!csrfSafeMethod(settings.type)) {
                         xhr.setRequestHeader('X-CSRFToken', $.cookie('csrftoken'));
                     }
                 },
-                success: function(data, textStatus, jqXHR) {
+                /**
+                 */
+                success: function (data, textStatus, jqXHR) {
                     console.log(data);
                 },
-                error: function(jqXHR, textStatus, error) {
+                /**
+                 */
+                error: function (jqXHR, textStatus, error) {
                     console.log(error);
                 }
             });
@@ -54,6 +62,5 @@ define([
     };
 
     return new DjFeedback();
-
 
 });
