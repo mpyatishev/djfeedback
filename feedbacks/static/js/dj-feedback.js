@@ -24,6 +24,16 @@ define([
         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
     };
 
+    var blockForm = function (form) {
+        form.addClass('_state_ajax-waiting');
+        form.find('[type=\'submit\']').attr('disabled', 'disabled');
+    };
+
+    var unblockForm = function (form) {
+        form.removeClass('_state_ajax-waiting');
+        form.find('[type=\'submit\']').removeAttr('disabled');
+    };
+
     /**
      */
     var DjFeedback = function () {
@@ -32,6 +42,7 @@ define([
         });
 
         var form = $('.b-dj-feedback__form');
+
         form.validate({
             submitHandler: function () {
                 var data = new FormData(form[0]);
@@ -47,16 +58,19 @@ define([
                         if (!csrfSafeMethod(settings.type)) {
                             xhr.setRequestHeader('X-CSRFToken', $.cookie('csrftoken'));
                         }
+                        blockForm(form);
                     },
                     /**
                      */
                     success: function (data, textStatus, jqXHR) {
                         console.log(data);
+                        unblockForm(form);
                     },
                     /**
                      */
                     error: function (jqXHR, textStatus, error) {
                         console.log(error);
+                        unblockForm(form);
                     }
                 });
             },
