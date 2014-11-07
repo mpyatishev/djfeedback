@@ -24,7 +24,7 @@
 
 <script src="{% static 'vendor/requirejs/require.js' %}"></script>
 <script>
-var ajaxLinks = window.AjaxLinks || {};
+var ajaxLinks = window.AjaxLinks = window.AjaxLinks || {};
 ajaxLinks.feedbackPost = "{% url 'feedback-post' %}";
 require(['{% static 'js/common.js' %}'], function () {
     require(['./js/dj-feedback']);
