@@ -13,6 +13,8 @@ requirejs.config({
     paths: {
         jquery: './vendor/jquery/dist/jquery',
         jqueryCookie: './vendor/jquery.cookie/jquery.cookie',
+
+        toggler: './vendor/b-toggler/index',
     },
     shim: {
         jqueryCookie: ['jquery'],

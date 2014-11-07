@@ -6,5 +6,8 @@
     "jquery.cookie": "~1.4.1",
     "requirejs": "~2.1.14"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "b-toggler": "https://github.com/VovanR/b-toggler.git"
+  }
 }

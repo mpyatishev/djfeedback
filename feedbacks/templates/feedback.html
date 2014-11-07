@@ -7,15 +7,19 @@
 {% endblock %}
 
 <div class="b-dj-feedback">
-    <span class="b-dj-feedback__toggler">Feedback</span>
+    <span class="b-toggler _name_dj-feedback b-toggler__toggler">
+        <span class="b-toggler__text">Feedback</span>
+    </span>
 
-    <form class="b-dj-Feedback__form _state_hidden" action="" method="POST">
-        <fieldset>
-            {% csrf_token %}
-            {{ feedback_form }}
-            <button type="submit">Submit</button>
-        </fieldset>
-    </form>
+    <div class="b-toggler _name_dj-feedback b-toggler__panel">
+        <form class="b-dj-feedback__form" action="" method="POST">
+            <fieldset>
+                {% csrf_token %}
+                {{ feedback_form }}
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </div>
 </div>
 
 <script src="{% static 'vendor/requirejs/require.js' %}"></script>
@@ -24,10 +28,16 @@ require(['{% static 'js/common.js' %}'], function () {
     require([
         'jquery',
         'jqueryCookie',
+        'toggler',
     ], function (
         $,
-        _jqueryCookie
+        _jqueryCookie,
+        Toggler
     ) {
+        var toggler = new Toggler({
+            name: 'dj-feedback',
+        });
+
         function csrfSafeMethod(method) {
             // these HTTP methods do not require CSRF protection
             return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));

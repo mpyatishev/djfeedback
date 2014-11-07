@@ -1,0 +1,45 @@
+/*
+ * Toggler
+ *
+ * default - is closed
+ */
+
+.b-toggler._name_dj-feedback {
+    &.b-toggler__toggler {
+        .b-toggler__text {
+            cursor: pointer;
+            user-select: none;
+
+            &._name_opened {
+                display: none;
+            }
+        }
+    }
+
+    &.b-toggler__panel {
+        display: none;
+    }
+
+
+    /*
+     * Opened
+     */
+
+    &._state_opened {
+        &.b-toggler__toggler {
+            .b-toggler__text {
+                &._name_opened {
+                    display: inline;
+                }
+
+                &._name_closed {
+                    display: none;
+                }
+            }
+        }
+
+        &.b-toggler__panel {
+            display: block;
+        }
+    }
+}
