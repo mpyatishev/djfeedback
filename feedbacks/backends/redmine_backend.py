@@ -16,7 +16,7 @@ class RedmineBackend(IBackend):
 
         tracker_id = message.ftype.pk
         if tracker_id is None:
-            tracker_id = 0
+            tracker_id = 1
 
         self.redmine.issue.create(
             project_id=self.project_id,
