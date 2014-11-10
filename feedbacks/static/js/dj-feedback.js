@@ -46,6 +46,14 @@ define([
         var form = $('.b-dj-feedback__form');
 
         form.validate({
+            errorClass: 'help-block',
+            errorElement: 'span',
+            highlight: function(element, errorClass, validClass) {
+                $(element).closest('.form-group').addClass('has-error');
+            },
+            unhighlight: function(element, errorClass, validClass) {
+                $(element).closest('.form-group').removeClass('has-error');
+            },
             submitHandler: function (form) {
                 $.ajax({
                     url: form.action,

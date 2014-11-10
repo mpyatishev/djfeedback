@@ -58,5 +58,7 @@ node_modules
 feedbacks/static/built
 feedbacks/static/vendor
 
+.ropeproject
+
 # DB
 db.sqlite3
