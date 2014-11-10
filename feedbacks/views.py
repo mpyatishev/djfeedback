@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import json
+import logging
 
 from django.http import HttpResponse
 from django.views.generic.edit import CreateView
@@ -11,6 +12,7 @@ from backends.base import BackendAggregator
 
 
 backend = BackendAggregator()
+logger = logging.getLogger('djfeedback.' + __name__)
 
 
 class FeedbackView(CreateView):
