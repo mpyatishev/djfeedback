@@ -58,6 +58,9 @@ define([
                 $.ajax({
                     url: form.action,
                     type: 'POST',
+                    data: new FormData(form),
+                    processData: false,
+                    contentType: false,
                     /**
                      */
                     beforeSend: function (xhr, settings) {
