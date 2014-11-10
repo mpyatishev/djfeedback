@@ -74,6 +74,7 @@ define([
                     success: function (data, textStatus, jqXHR) {
                         console.log(data);
                         unblockForm(form);
+                        toggler.close();
                     },
                     /**
                      */
