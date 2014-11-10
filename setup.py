@@ -10,10 +10,10 @@ setup(
     description='django feedback app',
     author='mpyatishev',
     author_email='mpyatishev@gmail.com',
-    packages=['djfeedback'],
+    packages=['feedbacks'],
     install_requires=[],
     license="MIT",
-    long_description='https://github.com/mpyatishev/djfeedback',
+    url='https://github.com/mpyatishev/djfeedback',
     classifiers=[
         "Intended Audience :: Developers",
         "Development Status :: 5 - Production/Development",
