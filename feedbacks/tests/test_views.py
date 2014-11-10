@@ -16,8 +16,7 @@ class TestRedmineBackend(TestCase):
 
     @patch('feedbacks.backends.redmine_backend.Redmine')
     def test_should_post_message(self, mock):
-        ftype = FeedbackType.objects.create(name='bugs')
-
+        ftype = FeedbackType.objects.get(ftype='bug')
         request = self.rf.post(
             reverse('feedback-post'),
             {

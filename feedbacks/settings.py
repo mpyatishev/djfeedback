@@ -14,8 +14,8 @@ DJFEEDBACK_REDMINE_PROJECT_ID = getattr(settings, 'DJFEEDBACK_REDMINE_PROJECT_ID
 DJFEEDBACK_REDMINE_TRACKERS = getattr(
     settings, 'DJFEEDBACK_REDMINE_TRACKERS',
     {
-        1: 1,
-        2: 2,
-        3: 3,
+        'bug': 1,
+        'feature': 2,
+        'support': 3,
     }
 )

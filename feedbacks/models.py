@@ -17,6 +17,7 @@ class Feedback(models.Model):
 
 
 class FeedbackType(models.Model):
+    ftype = models.CharField(max_length=10)
     name = models.CharField(_('name'), max_length=80)
 
     class Meta(object):

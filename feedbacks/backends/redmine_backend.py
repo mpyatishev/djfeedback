@@ -14,13 +14,13 @@ class RedmineBackend(IBackend):
 
     def post(self, message):
 
-        tracker_id = message.ftype.pk
-        if tracker_id is None:
-            tracker_id = 1
+        tracker = message.ftype.ftype
+        if tracker is None:
+            tracker = 'bug'
 
         self.redmine.issue.create(
             project_id=self.project_id,
-            tracker_id=settings.DJFEEDBACK_REDMINE_TRACKERS[tracker_id],
+            tracker_id=settings.DJFEEDBACK_REDMINE_TRACKERS[tracker],
             subject=message.subj,
             description=message.text,
         )
