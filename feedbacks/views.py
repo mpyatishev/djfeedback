@@ -7,6 +7,10 @@ from django.views.generic.edit import CreateView
 
 from forms import FeedbackForm
 from models import Feedback
+from backends.base import BackendAggregator
+
+
+backend = BackendAggregator()
 
 
 class FeedbackView(CreateView):
@@ -26,7 +30,8 @@ class FeedbackView(CreateView):
 
     def form_valid(self, form):
         if self.request.is_ajax():
-            form.save()
+            instance = form.save()
+            backend.post(instance)
             return self.render_to_json_response('OK')
         return super(FeedbackView, self).form_valid(form)
 

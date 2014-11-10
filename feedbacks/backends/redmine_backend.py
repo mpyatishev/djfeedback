@@ -2,12 +2,11 @@
 
 from redmine import Redmine
 
-from django.conf import settings
+from feedbacks import settings
+from base import IBackend
 
-from base import Backend
 
-
-class RedmineBackend(Backend):
+class RedmineBackend(IBackend):
     def __init__(self):
         self.redmine = Redmine(settings.DJFEEDBACK_REDMINE_URL,
                                key=settings.DJFEEDBACK_REDMINE_KEY)
@@ -15,9 +14,13 @@ class RedmineBackend(Backend):
 
     def post(self, message):
 
+        tracker_id = message.ftype.pk
+        if tracker_id is None:
+            tracker_id = 0
+
         self.redmine.issue.create(
             project_id=self.project_id,
-            tracker_id=settings.DJFEEBACK_REDMINE_TRACKERS[message.ftype],
+            tracker_id=settings.DJFEEDBACK_REDMINE_TRACKERS[tracker_id],
             subject=message.subj,
             description=message.text,
         )

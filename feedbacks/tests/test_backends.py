@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-# import mock
+from mock import patch
 
 from django.test import TestCase  # , RequestFactory
 
@@ -10,7 +10,8 @@ from ..models import Feedback, FeedbackType
 
 
 class TestRedmineBackend(TestCase):
-    def test_should_post_message(self):
+    @patch('feedbacks.backends.redmine_backend.Redmine')
+    def test_should_post_message(self, mock):
         ftype = FeedbackType()
         message = Feedback(
             name='test',
