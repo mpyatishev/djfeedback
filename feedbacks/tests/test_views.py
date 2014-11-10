@@ -10,7 +10,7 @@ from ..models import FeedbackType
 from ..views import FeedbackView
 
 
-class TestRedmineBackend(TestCase):
+class TestFeedbackView(TestCase):
     def setUp(self):
         self.rf = RequestFactory()
 
@@ -23,9 +23,12 @@ class TestRedmineBackend(TestCase):
                 'name': 'test',
                 'email': 'test@example.com',
                 'subj': 'test message',
-                'ftype': ftype,
+                'text': 'some text',
+                'ftype': ftype.pk,
             },
             HTTP_X_REQUESTED_WITH='XMLHttpRequest'
         )
 
         response = FeedbackView.as_view()(request)
+
+        self.assertIn('OK', response.content)
