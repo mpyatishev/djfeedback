@@ -9,7 +9,7 @@ from models import Feedback
 class FeedbackForm(forms.ModelForm):
     class Meta:
         model = Feedback
-        fields = ['name', 'email', 'ftype', 'subj', 'text', 'attachment']
+        fields = ['name', 'email', 'ftype', 'subj', 'text']
         widgets = {
             'name': forms.TextInput(attrs={
             }),
