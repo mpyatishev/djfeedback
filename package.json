@@ -18,6 +18,6 @@
     "yargs": ""
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower install; ./node_modules/.bin/gulp stylus"
+    "postinstall": "./node_modules/.bin/bower update; ./node_modules/.bin/gulp stylus"
   }
 }
