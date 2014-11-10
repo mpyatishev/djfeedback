@@ -46,18 +46,13 @@ define([
         var form = $('.b-dj-feedback__form');
 
         form.validate({
-            errorClass: 'has-error',
+            errorClass: 'help-block',
+            errorElement: 'span',
             highlight: function(element, errorClass, validClass) {
-                $(element).parent().addClass(errorClass).removeClass(validClass);
-                $(element).addClass(errorClass).removeClass(validClass);
-                // $(element.form).find("label[for=" + element.id + "]")
-                //     .addClass(errorClass);
+                $(element).closest('.form-group').addClass('has-error');
             },
             unhighlight: function(element, errorClass, validClass) {
-                $(element).parent().removeClass(errorClass).addClass(validClass);
-                $(element).removeClass(errorClass).addClass(validClass);
-                // $(element.form).find("label[for=" + element.id + "]")
-                //     .removeClass(errorClass);
+                $(element).closest('.form-group').removeClass('has-error');
             },
             submitHandler: function (form) {
                 $.ajax({

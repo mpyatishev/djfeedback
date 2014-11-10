@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load bootstrap3 %}
 {% load compress %}
 {% block css %}
     {% compress css %}
@@ -16,11 +17,12 @@
         <form class="b-dj-feedback__form" action="{% url 'feedback-post' %}" method="POST" role="form">
             <fieldset>
                 {% csrf_token %}
-                {{ feedback_form.as_p }}
-
-                <p class="form-group">
-                    <button class="btn btn-primary" type="submit">Submit</button>
-                </p>
+                {% bootstrap_form feedback_form %}
+                {% buttons %}
+                    <button class="btn btn-primary" type="submit">
+                        Submit
+                    </button>
+                {% endbuttons %}
             </fieldset>
         </form>
     </div>

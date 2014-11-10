@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'compressor',
+    'bootstrap3',
 
     'feedbacks',
 )
