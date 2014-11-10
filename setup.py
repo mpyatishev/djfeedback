@@ -21,19 +21,7 @@ setup(
     packages=find_packages(exclude=[
         'example',
     ]),
-    package_data={
-        '': [
-            'bower.json',
-            'gulpfile.js',
-            'package.json',
-        ],
-        'feedbacks': [
-            'templates/*',
-            'static/dj-feedback.build.js',
-            'static/js/*',
-            'static/styl/*',
-        ]
-    },
+    include_package_data=True,
     license="MIT",
     url='https://github.com/mpyatishev/djfeedback',
     classifiers=[
