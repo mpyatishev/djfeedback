@@ -11,21 +11,38 @@ var csso = require('csso-stylus');
 var amdOptimize = require('gulp-amd-optimizer');
 var concat = require('gulp-concat-sourcemap');
 var requireConfig = {
-    baseUrl: './'
+    "baseUrl": "./",
+    "paths": {
+        "dj-feedback": "feedbacks/static/feedbacks/js/dj-feedback",
+        "jquery": 'bower_components/bower_components/jquery/dist/jquery',
+        "jqueryCookie": 'bower_components/bower_components/jquery.cookie/jquery.cookie',
+        "jqueryValidate": 'bower_components/bower_components/jquery-validation/dist/jquery.validate',
+        "toggler": 'bower_components/bower_components/b-toggler/index'
+    },
+    "include": [
+        "toggler",
+        "dj-feedback"
+    ],
+    "exclude": [
+        "jquery",
+        "jqueryCookie",
+        "jqueryValidate"
+    ],
+    "out": "feedbacks/static/feedbacks/built/dj-feedback.js"
 };
 var options = {
     umd: false
 };
 gulp.task('amd', function () {
     return gulp.src(
-        'feedbacks/static/feedbacks/js/common.js',
-        {
-            base: requireConfig.baseUrl
-        }
-    )
-    .pipe(amdOptimize(requireConfig, options))
-    .pipe(concat('modules.js'))
-    .pipe(gulp.dest('dist'));
+            'feedbacks/static/feedbacks/js/dj-feedback.js',
+            {
+                base: requireConfig.baseUrl
+            }
+        )
+        .pipe(amdOptimize(requireConfig, options))
+        .pipe(concat('dj-feedback.js'))
+        .pipe(gulp.dest('feedbacks/static/feedbacks/built'));
 });;
 
 // Lint all modules:
