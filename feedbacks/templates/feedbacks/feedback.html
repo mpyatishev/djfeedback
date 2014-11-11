@@ -27,9 +27,9 @@
     </div>
 </div>
 
-<script src="{% static 'feedbacks/vendor/requirejs/require.js' %}"></script>
+<script src="{% static 'requirejs/require.js' %}"></script>
 <script>
 require(['{% static 'feedbacks/js/common.js' %}'], function () {
-    require(['./js/dj-feedback']);
+    require(['./feedbacks/js/dj-feedback']);
 });
 </script>
