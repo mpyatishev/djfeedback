@@ -87,3 +87,4 @@ gulp.task('watch', function () {
 });
 
 gulp.task('default', ['lint']);
+gulp.task('build', ['amd', 'stylus']);

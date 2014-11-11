@@ -4,6 +4,7 @@ djfeedback
 Django Feedback App
 
 ## Contributing
+### Install env
 ```
 cd ~/work
 git clone git@github.com:mpyatishev/djfeedback.git
@@ -16,7 +17,7 @@ npm install
 python manage.py bower install
 ```
 
-## Run
+### Run
 ```
 source ./env/bin/activate
 python manage.py runserver
@@ -27,7 +28,12 @@ If you working with styles, run
 ```
 Open http://127.0.0.1:8000/
 
-## Update
+### Build changed styles and scripts
+```
+./node_modules/.bin/gulp build
+```
+
+### Update
 ```
 git pull
 source ./env/bin/activate
