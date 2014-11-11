@@ -16,7 +16,7 @@ logger = logging.getLogger('djfeedback.' + __name__)
 
 
 class FeedbackView(CreateView):
-    template_name = 'feedback.html'
+    template_name = 'feedbacks/feedback.html'
     model = Feedback
     form_class = FeedbackForm
 

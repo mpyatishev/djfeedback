@@ -7,7 +7,7 @@ from ..forms import FeedbackForm
 register = template.Library()
 
 
-@register.inclusion_tag('feedback.html')
+@register.inclusion_tag('feedbacks/feedback.html')
 def feedback():
     return {
         'feedback_form': FeedbackForm(),

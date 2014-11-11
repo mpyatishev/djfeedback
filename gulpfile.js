@@ -19,7 +19,7 @@ gulp.task('lint', function () {
         .src(
             src ||
             [
-                './feedbacks/static/js/**/*.js',
+                './feedbacks/static/feedbacks/js/**/*.js',
                 './gulpfile.js',
             ]
         )
@@ -30,7 +30,7 @@ gulp.task('lint', function () {
 
 gulp.task('stylus', function () {
     return gulp
-        .src('./feedbacks/static/styl/dj-feedback.styl')
+        .src('./feedbacks/static/feedbacks/styl/dj-feedback.styl')
         .pipe(stylus({
             use: [
                 autoprefixer({
@@ -40,11 +40,11 @@ gulp.task('stylus', function () {
                 csso(),
             ],
         }))
-        .pipe(gulp.dest('./feedbacks/static/built'));
+        .pipe(gulp.dest('./feedbacks/static/feedbacks/built'));
 });
 
 gulp.task('watch', function () {
-    gulp.watch(['./feedbacks/static/styl/*.styl'], ['stylus']);
+    gulp.watch(['./feedbacks/static/feedbacks/styl/*.styl'], ['stylus']);
 });
 
 gulp.task('default', ['lint']);

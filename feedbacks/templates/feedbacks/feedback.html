@@ -3,7 +3,7 @@
 {% load compress %}
 {% block css %}
     {% compress css %}
-        <link href="{% static 'built/dj-feedback.css' %}" rel="stylesheet" />
+        <link href="{% static 'feedbacks/built/dj-feedback.css' %}" rel="stylesheet" />
     {% endcompress %}
 {% endblock %}
 
@@ -27,9 +27,9 @@
     </div>
 </div>
 
-<script src="{% static 'vendor/requirejs/require.js' %}"></script>
+<script src="{% static 'feedbacks/vendor/requirejs/require.js' %}"></script>
 <script>
-require(['{% static 'js/common.js' %}'], function () {
+require(['{% static 'feedbacks/js/common.js' %}'], function () {
     require(['./js/dj-feedback']);
 });
 </script>

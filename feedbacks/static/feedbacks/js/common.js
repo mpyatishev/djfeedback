@@ -4,7 +4,7 @@
 
 // Тесты имеют свой базовый путь, поэтому так:
 if (!requirejs.config.baseUrl) {
-    requirejs.config.baseUrl = '/static/';
+    requirejs.config.baseUrl = '/static/feedbacks/';
 }
 
 // Пути к библиотекам, типа jQuery

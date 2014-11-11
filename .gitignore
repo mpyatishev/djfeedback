@@ -55,7 +55,7 @@ target/
 
 # Front-End
 node_modules
-feedbacks/static/vendor
+feedbacks/static/feedbacks/vendor
 
 .ropeproject
 
