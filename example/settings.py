@@ -27,7 +27,7 @@ TEMPLATE_DEBUG = True
 ALLOWED_HOSTS = []
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'djfeedback', 'templates'),
+    os.path.join(BASE_DIR, 'example', 'templates'),
 )
 
 # Application definition
@@ -56,9 +56,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'djfeedback.urls'
+ROOT_URLCONF = 'example.urls'
 
-WSGI_APPLICATION = 'djfeedback.wsgi.application'
+WSGI_APPLICATION = 'example.wsgi.application'
 
 
 # Database
