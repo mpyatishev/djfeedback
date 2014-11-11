@@ -8,6 +8,26 @@ var stylus = require('gulp-stylus');
 var autoprefixer = require('autoprefixer-stylus');
 var csso = require('csso-stylus');
 
+var amdOptimize = require('gulp-amd-optimizer');
+var concat = require('gulp-concat-sourcemap');
+var requireConfig = {
+    baseUrl: './'
+};
+var options = {
+    umd: false
+};
+gulp.task('amd', function () {
+    return gulp.src(
+        'feedbacks/static/feedbacks/js/common.js',
+        {
+            base: requireConfig.baseUrl
+        }
+    )
+    .pipe(amdOptimize(requireConfig, options))
+    .pipe(concat('modules.js'))
+    .pipe(gulp.dest('dist'));
+});;
+
 // Lint all modules:
 // $ gulp lint
 // Lint one module:
