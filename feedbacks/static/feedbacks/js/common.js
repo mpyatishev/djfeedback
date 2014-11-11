@@ -11,9 +11,9 @@ if (!requirejs.config.baseUrl) {
 requirejs.config({
     baseUrl: requirejs.config.baseUrl, // Путь к статике
     paths: {
-        jquery: './jquery/dist/jquery',
-        jqueryCookie: './jquery.cookie/jquery.cookie',
-        jqueryValidate: './jquery-validation/dist/jquery.validate',
+        jquery: './vendor/jquery/dist/jquery',
+        jqueryCookie: './vendor/jquery.cookie/jquery.cookie',
+        jqueryValidate: './vendor/jquery-validation/dist/jquery.validate',
 
         toggler: './b-toggler/index',
     },
