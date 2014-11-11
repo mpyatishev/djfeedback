@@ -107,7 +107,7 @@ define("toggler", [
 
 
 
-define("feedbacks/static/feedbacks/js/dj-feedback", [
+require([
     'jquery',
     'jqueryCookie',
     'jqueryValidate',

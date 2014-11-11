@@ -27,11 +27,13 @@
     </div>
 </div>
 
-<script data-main="{% static 'feedbacks/built/dj-feedback' %}" src="{% static 'requirejs/require.js' %}"></script>
-{% comment %}
+<script src="{% static 'requirejs/require.js' %}"></script>
 <script>
 require(['{% static 'feedbacks/js/common.js' %}'], function () {
-    require(['./feedbacks/js/dj-feedback']);
+    {% if DEBUG %}
+        require(['{% static 'feedbacks/js/dj-feedback.js' %}']);
+    {% else %}
+        require(['{% static 'feedbacks/built/dj-feedback.js' %}']);
+    {% endif %}
 });
 </script>
-{% endcomment %}

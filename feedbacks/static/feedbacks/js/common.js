@@ -3,23 +3,21 @@
  */
 
 // Тесты имеют свой базовый путь, поэтому так:
-// if (!requirejs.config.baseUrl) {
-//     requirejs.config.baseUrl = '/static/';
-// }
+if (!requirejs.config.baseUrl) {
+    requirejs.config.baseUrl = '/static/';
+}
 
 // Пути к библиотекам, типа jQuery
-var p = './bower_components/bower_components'
 requirejs.config({
+    baseUrl: requirejs.config.baseUrl, // Путь к статике
     paths: {
-        jquery: p + '/jquery/dist/jquery',
-        jqueryCookie: p + '/jquery.cookie/jquery.cookie',
-        jqueryValidate: p + '/jquery-validation/dist/jquery.validate',
+        jquery: './jquery/dist/jquery',
+        jqueryCookie: './jquery.cookie/jquery.cookie',
+        jqueryValidate: './jquery-validation/dist/jquery.validate',
 
-        toggler: p + '/b-toggler/index',
+        toggler: './b-toggler/index',
     },
     shim: {
         jqueryCookie: ['jquery'],
     },
 });
-
-require(['./feedbacks/static/feedbacks/js/dj-feedback']);
