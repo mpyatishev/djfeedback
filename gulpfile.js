@@ -9,7 +9,8 @@ var autoprefixer = require('autoprefixer-stylus');
 var csso = require('csso-stylus');
 
 var amdOptimize = require('gulp-amd-optimizer');
-var concat = require('gulp-concat-sourcemap');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglifyjs');
 var requireConfig = {
     "baseUrl": "./",
     "paths": {
@@ -42,6 +43,7 @@ gulp.task('amd', function () {
         )
         .pipe(amdOptimize(requireConfig, options))
         .pipe(concat('dj-feedback.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('feedbacks/static/feedbacks/built'));
 });;
 
