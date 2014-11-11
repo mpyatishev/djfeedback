@@ -2,8 +2,8 @@
     "exclude": [
         ".git/**",
         "node_modules/**",
+        "bower_components/**",
         "feedbacks/static/feedbacks/built/**",
-        "feedbacks/static/feedbacks/vendor/**"
     ],
     "always-semicolon": true,
     "block-indent": 4,
