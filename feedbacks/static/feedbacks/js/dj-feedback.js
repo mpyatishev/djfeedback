@@ -2,7 +2,7 @@
  * @author VovanR <mail@vovanr.com>
  */
 
-define([
+require([
     'jquery',
     'jqueryCookie',
     'jqueryValidate',
