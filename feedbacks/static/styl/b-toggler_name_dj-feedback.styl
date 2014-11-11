@@ -4,14 +4,22 @@
  * default - is closed
  */
 
+borderColor = #000;
+
 .b-toggler._name_dj-feedback {
     &.b-toggler__toggler {
         position: absolute;
         top: 0;
         left: 100%;
         display: block;
+        background-color: #fff;
+        box-shadow: 1px 0 0 0px borderColor,
+                    1px -1px 0 0px borderColor,
+                    1px 1px 0 0px borderColor;
 
         .b-toggler__text {
+            display: block;
+            padding: 10px 20px;
             cursor: pointer;
             user-select: none;
 
@@ -23,6 +31,9 @@
 
     &.b-toggler__panel {
         display: none;
+        background-color: #fff;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.15),
+                    0 0 0 1px borderColor;
     }
 
 
