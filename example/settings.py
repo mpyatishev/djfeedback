@@ -41,7 +41,6 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
 
     'compressor',
-    'djangobower',
     'bootstrap3',
 
     'feedbacks',
@@ -102,6 +101,7 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
     os.path.join(BASE_DIR, 'feedbacks', 'static'),
+    os.path.join(BASE_DIR, 'bower_components'),
 )
 
 # List of finder classes that know how to find static files in
@@ -110,7 +110,6 @@ STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
     'compressor.finders.CompressorFinder',
-    'djangobower.finders.BowerFinder',
 )
 
 LOGGING = {
@@ -154,16 +153,3 @@ LOGGING = {
         },
     }
 }
-
-# Bower
-BOWER_PATH = os.path.join(BASE_DIR, 'node_modules/.bin/bower')
-
-BOWER_COMPONENTS_ROOT = os.path.join(BASE_DIR, 'bower_components')
-
-BOWER_INSTALLED_APPS = (
-    "jquery#2.1.1",
-    "jquery.cookie#~1.4.1",
-    "requirejs#2.1.14",
-    "jquery-validation#1.13.1",
-    "https://github.com/VovanR/b-toggler.git",
-)

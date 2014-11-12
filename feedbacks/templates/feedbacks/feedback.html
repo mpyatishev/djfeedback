@@ -30,7 +30,7 @@
 <script src="{% static 'requirejs/require.js' %}"></script>
 <script>
 require(['{% static 'feedbacks/js/common.js' %}'], function () {
-    {% if DEBUG %}
+    {% if not DEBUG %}
         require(['{% static 'feedbacks/js/dj-feedback.js' %}']);
     {% else %}
         require(['{% static 'feedbacks/built/dj-feedback.js' %}']);

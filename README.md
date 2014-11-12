@@ -14,7 +14,6 @@ source ./env/bin/activate
 pip install -r requirements.txt
 python manage.py migrate
 npm install
-python manage.py bower install
 ```
 
 ### Run
@@ -38,7 +37,5 @@ Open http://127.0.0.1:8000/
 git pull
 source ./env/bin/activate
 pip install -r requirements.txt
-npm install
-python manage.py bower install
 npm install
 ```
