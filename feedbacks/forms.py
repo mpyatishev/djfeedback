@@ -2,6 +2,7 @@
 
 
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 
 from models import Feedback
 
@@ -30,4 +31,7 @@ class FeedbackForm(forms.ModelForm):
             'attachment': forms.Select(attrs={
                 'autocomplete': 'off',
             }),
+        }
+        labels = {
+            'ftype': _('Type')
         }
