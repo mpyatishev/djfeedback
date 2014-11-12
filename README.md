@@ -3,6 +3,18 @@ djfeedback
 
 Django Feedback App
 
+## Install
+
+Copy `.bowerrc` and `bower.json` to your project.
+Copy `feedbacks/static/feedbacks/js/config.js` to your static.
+
+Install bower components:
+```
+bower install
+```
+
+See `example/templates/main.html` and `example/settings.py`
+
 ## Contributing
 ### Install env
 ```

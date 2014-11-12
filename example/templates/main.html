@@ -1,6 +1,25 @@
-{% load feedbacks %}
 <html>
+<head>
+{% load staticfiles %}
+{% block css %}
+    <link href="{% static 'feedbacks/built/dj-feedback.css' %}" rel="stylesheet" />
+{% endblock %}
+</head>
 <body>
+    {% load feedbacks %}
     {% feedback %}
+
+    {% block scripts %}
+        <script src="{% static 'requirejs/require.js' %}"></script>
+        <script>
+        require(['{% static 'feedbacks/js/config.js' %}'], function () {
+            {% if DEBUG %}
+                require(['{% static 'feedbacks/js/dj-feedback.js' %}']);
+            {% else %}
+                require(['{% static 'feedbacks/built/dj-feedback.js' %}']);
+            {% endif %}
+        });
+        </script>
+    {% endblock scripts %}
 </body>
 </html>
