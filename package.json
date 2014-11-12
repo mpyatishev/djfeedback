@@ -19,5 +19,8 @@
     "jscs-jsdoc": "",
     "jshint-stylish": "",
     "yargs": ""
+  },
+  "scripts": {
+    "postinstall": "./node_modules/.bin/bower update"
   }
 }
