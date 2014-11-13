@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-13 11:20+0000\n"
-"PO-Revision-Date: 2014-11-13 14:26+0230\n"
+"PO-Revision-Date: 2014-11-13 15:28+0230\n"
 "Last-Translator: Anonymous Pyatishev <drpeper@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -29,11 +29,11 @@ msgstr "Ошибка"
 
 #: migrations/0004_auto_20141110_0841.py:11
 msgid "Feature"
-msgstr "Фича"
+msgstr "Хочу фичу"
 
 #: migrations/0004_auto_20141110_0841.py:12
 msgid "Support"
-msgstr ""
+msgstr "Поддержка"
 
 #: models.py:6
 msgid "date"
@@ -41,7 +41,7 @@ msgstr ""
 
 #: models.py:7 models.py:21 models.py:32
 msgid "name"
-msgstr ""
+msgstr "имя"
 
 #: models.py:8
 msgid "e-mail"
@@ -49,11 +49,11 @@ msgstr ""
 
 #: models.py:10
 msgid "subject"
-msgstr ""
+msgstr "тема"
 
 #: models.py:11
 msgid "text"
-msgstr ""
+msgstr "текст"
 
 #: models.py:15
 msgid "feedback"
