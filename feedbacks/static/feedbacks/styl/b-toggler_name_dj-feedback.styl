@@ -7,21 +7,40 @@
 borderColor = #000;
 
 .b-toggler._name_dj-feedback {
+    /*
+     * Rotated Text
+     * See: http://kizu.ru/en/fun/rotated-text/
+     */
+
     &.b-toggler__toggler {
         position: absolute;
         top: 0;
         left: 100%;
         display: block;
+        overflow: hidden;
+        padding: 14px 8px;
+        width: 1.5em;
+        border-radius: 0 3px 3px 0;
         background-color: #fff;
         box-shadow: 1px 0 0 0px borderColor,
                     1px -1px 0 0px borderColor,
                     1px 1px 0 0px borderColor;
+        line-height: 1.5;
+        cursor: pointer;
 
         .b-toggler__text {
-            display: block;
-            padding: 10px 20px;
-            cursor: pointer;
+            display: inline-block;
+            white-space: nowrap;
+            font-size: 16px;
+            transform: translate(0, 100%) rotate(-90deg);
+            transform-origin: 0 0 0;
             user-select: none;
+
+            &:after {
+                float: left;
+                margin-top: 100%;
+                content: '';
+            }
 
             &._name_opened {
                 display: none;
