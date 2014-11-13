@@ -1,5 +1,5 @@
 include README.md
-include feedbacks/templates/*
+recursive-include feedbacks *.html *.po *.mo
 recursive-include feedbacks/static *
 # include feedbacks/static/feedbacks/js/*
 # include feedbacks/static/feedbacks/styl/*
