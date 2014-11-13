@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-11-13 09:33+0000\n"
+"POT-Creation-Date: 2014-11-13 11:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,18 @@ msgstr ""
 
 #: forms.py:36
 msgid "Type"
+msgstr ""
+
+#: migrations/0004_auto_20141110_0841.py:10
+msgid "Bug"
+msgstr ""
+
+#: migrations/0004_auto_20141110_0841.py:11
+msgid "Feature"
+msgstr ""
+
+#: migrations/0004_auto_20141110_0841.py:12
+msgid "Support"
 msgstr ""
 
 #: models.py:6
