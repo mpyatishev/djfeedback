@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+from django.utils.translation import ugettext
 
 
 class Feedback(models.Model):
@@ -25,7 +26,7 @@ class FeedbackType(models.Model):
         verbose_name_plural = _('feedback type')
 
     def __unicode__(self):
-        return self.name
+        return ugettext(self.name)
 
 
 class Attachment(models.Model):

@@ -2,20 +2,21 @@
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-#
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2014-11-13 11:20+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"PO-Revision-Date: 2014-11-13 14:25+0230\n"
+"Last-Translator: Anonymous Pyatishev <drpeper@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+"X-Translated-Using: django-rosetta 0.7.4\n"
 
 #: forms.py:36
 msgid "Type"
@@ -23,15 +24,15 @@ msgstr ""
 
 #: migrations/0004_auto_20141110_0841.py:10
 msgid "Bug"
-msgstr ""
+msgstr "Ошибка"
 
 #: migrations/0004_auto_20141110_0841.py:11
 msgid "Feature"
-msgstr ""
+msgstr "Фича"
 
 #: migrations/0004_auto_20141110_0841.py:12
 msgid "Support"
-msgstr ""
+msgstr "Поддержка"
 
 #: models.py:6
 msgid "date"
