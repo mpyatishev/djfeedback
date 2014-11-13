@@ -45,7 +45,7 @@ gulp.task('amd', function () {
         .pipe(concat('dj-feedback.js'))
         .pipe(uglify())
         .pipe(gulp.dest('feedbacks/static/feedbacks/built'));
-});;
+});
 
 // Lint all modules:
 // $ gulp lint

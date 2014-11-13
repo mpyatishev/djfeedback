@@ -24,16 +24,32 @@ require([
         return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
     };
 
+    /**
+     * @param {Object} form
+     */
     var blockForm = function (form) {
         form = $(form);
         form.addClass('_state_ajax-waiting');
         form.find('[type=\'submit\']').attr('disabled', 'disabled');
     };
 
+    /**
+     * @param {Object} form
+     */
     var unblockForm = function (form) {
         form = $(form);
         form.removeClass('_state_ajax-waiting');
         form.find('[type=\'submit\']').removeAttr('disabled');
+    };
+
+    /**
+     * @param {Object} form
+     */
+    var resetForm = function (form) {
+        $(form).find('[autocomplete=\'off\']').each(function () {
+            var $this = $(this);
+            $this.val($this.prop('defaultValue'));
+        });
     };
 
     /**
@@ -48,12 +64,18 @@ require([
         form.validate({
             errorClass: 'help-block',
             errorElement: 'span',
-            highlight: function(element, errorClass, validClass) {
+            /**
+            */
+            highlight: function (element, errorClass, validClass) {
                 $(element).closest('.form-group').addClass('has-error');
             },
-            unhighlight: function(element, errorClass, validClass) {
+            /**
+            */
+            unhighlight: function (element, errorClass, validClass) {
                 $(element).closest('.form-group').removeClass('has-error');
             },
+            /**
+            */
             submitHandler: function (form) {
                 $.ajax({
                     url: form.action,
@@ -74,6 +96,7 @@ require([
                     success: function (data, textStatus, jqXHR) {
                         console.log(data);
                         unblockForm(form);
+                        resetForm(form);
                         toggler.close();
                     },
                     /**
