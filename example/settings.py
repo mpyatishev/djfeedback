@@ -175,7 +175,7 @@ REQUIRE_JS = os.path.join(STATIC_URL, 'requirejs/require.js')
 REQUIRE_STANDALONE_MODULES = {
     "app": {
         "out": "app-built.js",
-        "build_profile": "../app.build.js"
+        "build_profile": "app.build.js"
     }
 }
 

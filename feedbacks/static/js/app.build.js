@@ -11,7 +11,7 @@
 
     // appDir: "./js",
     // point to the shim config we set up before
-    mainConfigFile: "./js/app.js",
+    mainConfigFile: "./app.js",
     // modules: [
     //     {
     //         "name": "app"
