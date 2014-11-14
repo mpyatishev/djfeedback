@@ -9,7 +9,11 @@
     {% load feedbacks %}
     {% feedback %}
 
+    {% load require %}
+    {% require_module 'app' %}
+
     {% block scripts %}
+    {% comment %}
         <script src="{% static 'requirejs/require.js' %}"></script>
         <script>
         require(['{% static 'feedbacks/js/config.js' %}'], function () {
@@ -20,6 +24,7 @@
             {% endif %}
         });
         </script>
+    {% endcomment %}
     {% endblock scripts %}
 </body>
 </html>
