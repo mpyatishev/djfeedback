@@ -6,7 +6,6 @@ Django Feedback App
 ## Install
 
 Copy `.bowerrc` and `bower.json` to your project.
-Copy `feedbacks/static/feedbacks/js/config.js` to your static.
 
 Install bower components:
 ```
@@ -39,7 +38,7 @@ If you working with styles, run
 ```
 Open http://127.0.0.1:8000/
 
-### Build changed styles and scripts
+### Build changed styles
 ```
 ./node_modules/.bin/gulp build
 ```
