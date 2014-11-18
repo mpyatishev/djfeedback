@@ -1,5 +1,5 @@
 define(["jquery"], function ($) {
     $(function () {
-        console.log($);
+        $(document.body).append($('<p />').text($.fn.jquery));
     });
 });

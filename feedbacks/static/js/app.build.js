@@ -12,6 +12,9 @@
     // appDir: "./js",
     // point to the shim config we set up before
     mainConfigFile: "./app.js",
+    exclude: [
+        "jquery",
+    ],
     // modules: [
     //     {
     //         "name": "app"

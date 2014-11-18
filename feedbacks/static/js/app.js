@@ -6,12 +6,12 @@ requirejs.config({
         jqueryValidate: '../jquery-validation/dist/jquery.validate',
 
         toggler: '../b-toggler/index',
-
-        app: './app'
     },
     shim: {
         jqueryCookie: ['jquery'],
     },
 });
+
+define('jquery', [], function () { return window.jQuery });
 
 requirejs(['app/main']);
