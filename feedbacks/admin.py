@@ -1,3 +1,11 @@
 from django.contrib import admin
 
-# Register your models here.
+from models import (
+    Feedback,
+    FeedbackType,
+    Attachment,
+)
+
+admin.site.register(Feedback)
+admin.site.register(FeedbackType)
+admin.site.register(Attachment)
