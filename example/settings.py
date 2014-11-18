@@ -180,7 +180,7 @@ REQUIRE_STANDALONE_MODULES = {
 }
 
 # Whether to run django-require in debug mode.
-REQUIRE_DEBUG = False
+REQUIRE_DEBUG = True
 
 # A tuple of files to exclude from the compilation result of r.js.
 REQUIRE_EXCLUDE = ("build.txt",)

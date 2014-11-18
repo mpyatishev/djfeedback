@@ -9,6 +9,7 @@ install_requires = [
     'django-compressor >= 1.4',
     'django-bootstrap3',
     'python-redmine',
+    'django-require',
 ]
 
 
