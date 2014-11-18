@@ -173,14 +173,14 @@ REQUIRE_JS = os.path.join(STATIC_URL, 'requirejs/require.js')
 # A dictionary of standalone modules to build with almond.js.
 # See the section on Standalone Modules, below.
 REQUIRE_STANDALONE_MODULES = {
-    "app": {
-        "out": "app-built.js",
-        "build_profile": "app.build.js"
+    "dj-feedback": {
+        "out": "dj-feedback-built.js",
+        "build_profile": "dj-feedback.build.js"
     }
 }
 
 # Whether to run django-require in debug mode.
-REQUIRE_DEBUG = True
+REQUIRE_DEBUG = False
 
 # A tuple of files to exclude from the compilation result of r.js.
 REQUIRE_EXCLUDE = ("build.txt",)

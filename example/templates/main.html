@@ -11,22 +11,10 @@
 
     {% block scripts %}
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-2.1.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src=\'{% static "jquery/dist/jquery.min.js" %}\'><\/script>')</script>
 
         {% load require %}
-        {% require_module 'app' %}
-
-    {% comment %}
-        <script>
-        require(['{% static 'feedbacks/js/config.js' %}'], function () {
-            {% if DEBUG %}
-                require(['{% static 'feedbacks/js/dj-feedback.js' %}']);
-            {% else %}
-                require(['{% static 'feedbacks/built/dj-feedback.js' %}']);
-            {% endif %}
-        });
-        </script>
-    {% endcomment %}
+        {% require_module 'dj-feedback' %}
     {% endblock scripts %}
 </body>
 </html>

@@ -1,7 +1,8 @@
+define('jquery', [], function () { return window.jQuery });
+
 requirejs.config({
     baseUrl: '/static/js',
     paths: {
-        jquery: '../jquery/dist/jquery',
         jqueryCookie: '../jquery.cookie/jquery.cookie',
         jqueryValidate: '../jquery-validation/dist/jquery.validate',
 
@@ -12,6 +13,4 @@ requirejs.config({
     },
 });
 
-define('jquery', [], function () { return window.jQuery });
-
-requirejs(['app/main']);
+requirejs(['../feedbacks/js/app/dj-feedback-app']);
