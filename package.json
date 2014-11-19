@@ -15,9 +15,12 @@
     "jscs": "",
     "jscs-jsdoc": "",
     "jshint-stylish": "",
+    "requirejs": "",
     "yargs": ""
   },
   "scripts": {
-    "postinstall": "./node_modules/.bin/bower update"
+    "postinstall": "./node_modules/.bin/bower update",
+    "buildcss": "./node_modules/.bin/gulp build",
+    "buildjs": "./node_modules/.bin/r.js -o feedbacks/static/js/app.build.js"
   }
 }

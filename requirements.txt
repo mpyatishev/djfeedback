@@ -1,5 +1,4 @@
 Django>=1.6
 django-compressor>=1.4
 django-bootstrap3
-django-require
 python-redmine

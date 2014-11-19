@@ -40,7 +40,12 @@ Open http://127.0.0.1:8000/
 
 ### Build changed styles
 ```
-./node_modules/.bin/gulp build
+npm run buildcss
+```
+
+### Build changed js
+```
+npm run buildjs
 ```
 
 ### Update
