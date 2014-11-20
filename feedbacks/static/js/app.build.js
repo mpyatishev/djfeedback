@@ -1,16 +1,18 @@
 {
     appDir: '../js',
     baseUrl: '.',
-    optimize: 'none',
+    dir: '../built',
+    optimize: 'uglify2',
+    optimizeCss: 'none',
     paths: {
-        feedbacks: '../feedbacks/js/app',
         // jquery: '../../../bower_components/vendor/jquery/dist/jquery',
         jqueryCookie: '../../../bower_components/vendor/jquery.cookie/jquery.cookie',
         jqueryValidate: '../../../bower_components/vendor/jquery-validation/dist/jquery.validate',
+        toggler: '../../../bower_components/vendor/b-toggler/index',
 
-        toggler: '../../../bower_components/vendor/b-toggler/index'
+        // Apps paths
+        feedbacks: '../feedbacks/js/app'
     },
-    dir: '../built',
     modules: [
         {
             name: './common',

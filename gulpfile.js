@@ -20,6 +20,7 @@ gulp.task('lint', function () {
             src ||
             [
                 './feedbacks/static/feedbacks/js/**/*.js',
+                './feedbacks/static/js/**/*.js',
                 './gulpfile.js',
             ]
         )

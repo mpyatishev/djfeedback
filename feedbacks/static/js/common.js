@@ -4,9 +4,9 @@ requirejs.config({
         // jquery: '../vendor/jquery/dist/jquery',
         jqueryCookie: '../vendor/jquery.cookie/jquery.cookie',
         jqueryValidate: '../vendor/jquery-validation/dist/jquery.validate',
-
         toggler: '../vendor/b-toggler/index',
 
+        // Apps paths
         feedbacks: '../feedbacks/js/app',
     },
     shim: {

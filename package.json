@@ -4,9 +4,12 @@
   "homepage": "https://github.com/mpyatishev/djfeedback",
   "license": "MIT",
   "repository": "mpyatishev/djfeedback",
+  "dependencies": {
+    "bower": "",
+    "requirejs": ""
+  },
   "devDependencies": {
     "autoprefixer-stylus": "",
-    "bower": "",
     "csso-stylus": "",
     "gulp": "",
     "gulp-jscs": "",
@@ -14,8 +17,8 @@
     "gulp-stylus": "",
     "jscs": "",
     "jscs-jsdoc": "",
+    "jshint": "",
     "jshint-stylish": "",
-    "requirejs": "",
     "yargs": ""
   },
   "scripts": {

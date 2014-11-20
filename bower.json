@@ -2,14 +2,11 @@
   "name": "djfeedback",
   "version": "0.0.0",
   "dependencies": {
+    "b-toggler": "https://github.com/VovanR/b-toggler.git",
     "jquery": "~2.1.1",
     "jquery.cookie": "~1.4.1",
-    "requirejs": "~2.1.14",
     "jquery-validation": "~1.13.1",
-    "r.js": "~2.1.15"
+    "requirejs": "~2.1.14"
   },
-  "private": true,
-  "devDependencies": {
-    "b-toggler": "https://github.com/VovanR/b-toggler.git"
-  }
+  "private": true
 }
