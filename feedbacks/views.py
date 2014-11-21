@@ -4,6 +4,7 @@ import json
 import logging
 
 from django.http import HttpResponse
+from django.shortcuts import redirect
 from django.views.generic.edit import CreateView
 
 from forms import FeedbackForm
@@ -35,7 +36,7 @@ class FeedbackView(CreateView):
             instance = form.save()
             backend.post(instance)
             return self.render_to_json_response('OK')
-        return super(FeedbackView, self).form_valid(form)
+        return redirect('/')
 
     def render_to_json_response(self, context, **kwargs):
         data = json.dumps(context)
