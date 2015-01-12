@@ -57,6 +57,7 @@ define([
     var DjFeedback = function () {
         var toggler = new Toggler({
             name: 'dj-feedback',
+            closeOnBlur: true,
         });
 
         var form = $('.b-dj-feedback__form');
@@ -65,17 +66,17 @@ define([
             errorClass: 'help-block',
             errorElement: 'span',
             /**
-            */
+             */
             highlight: function (element, errorClass, validClass) {
                 $(element).closest('.form-group').addClass('has-error');
             },
             /**
-            */
+             */
             unhighlight: function (element, errorClass, validClass) {
                 $(element).closest('.form-group').removeClass('has-error');
             },
             /**
-            */
+             */
             submitHandler: function (form) {
                 $.ajax({
                     url: form.action,
