@@ -4,9 +4,9 @@
 common.js
 /home/vova/work/djfeedback/bower_components/vendor/jquery.cookie/jquery.cookie.js
 /home/vova/work/djfeedback/bower_components/vendor/jquery-validation/dist/jquery.validate.js
+/home/vova/work/djfeedback/bower_components/vendor/b-toggler/index.js
 
 ./dj-feedback.js
 ----------------
 dj-feedback.js
-/home/vova/work/djfeedback/bower_components/vendor/b-toggler/index.js
 /home/vova/work/djfeedback/feedbacks/static/feedbacks/js/app/dj-feedback-app.js

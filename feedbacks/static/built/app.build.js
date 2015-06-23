@@ -19,7 +19,8 @@
             include: [
                 // 'jquery',
                 'jqueryCookie',
-                'jqueryValidate'
+                'jqueryValidate',
+                'toggler'
             ]
         },
         {
